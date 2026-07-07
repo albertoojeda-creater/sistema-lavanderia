@@ -18,6 +18,10 @@ Este documento detalla los cambios, correcciones de seguridad, mejoras de estabi
 * 🔑 [frontend/src/pages/Login.jsx](file:///c:/Users/Santi/OneDrive/Escritorio/santi/Sistema%20de%20lavanderia/frontend/src/pages/Login.jsx) — Eliminación del almacenamiento del token en `localStorage`.
 * 🚪 [frontend/src/components/Layout.jsx](file:///c:/Users/Santi/OneDrive/Escritorio/santi/Sistema%20de%20lavanderia/frontend/src/components/Layout.jsx) — Integración de llamada de cierre de sesión al servidor antes de limpiar el estado del frontend.
 
+### Documentación (Nuevos)
+* 📄 [documentacion_privacidad/politica_privacidad.md](file:///c:/Users/Santi/OneDrive/Escritorio/santi/Sistema%20de%20lavanderia/documentacion_privacidad/politica_privacidad.md) — Política de privacidad integral de la lavandería.
+* 📄 [documentacion_privacidad/proteccion_datos_personales.md](file:///c:/Users/Santi/OneDrive/Escritorio/santi/Sistema%20de%20lavanderia/documentacion_privacidad/proteccion_datos_personales.md) — Documento explicativo sobre el cumplimiento normativo LFPDPPP y Derechos ARCO.
+
 ---
 
 ## 🛠️ Detalle de las Correcciones y Mejoras
@@ -64,6 +68,12 @@ Para evitar que el servidor de backend colapse y se detenga ante fallos imprevis
 ### 6. Optimización en la Gestión de Anuncios
 * **Validación de Existencia en Toggle:** El endpoint `PATCH /api/announcements/:id/toggle` ahora verifica primero si el anuncio realmente existe antes de intentar actualizar su estado. Si no existe, devuelve un estado `404 Not Found` en lugar de disparar un error interno de base de datos.
 * **Eliminación Masiva (Bulk Cleanup):** Se agregó el endpoint `DELETE /api/announcements/bulk/inactive` para eliminar todos los anuncios inactivos de la base de datos de manera rápida y en una sola consulta.
+
+### 7. Cumplimiento de Privacidad (LFPDPPP)
+* **Pantalla Pública de Registro:** Se agregó una nueva ruta (`/registro`) con un diseño moderno para que los usuarios puedan registrarse.
+* **Consentimiento Explícito:** El formulario de registro obliga al usuario a marcar dos casillas de verificación (checkboxes) requeridas, garantizando la aceptación expresa de la Política de Privacidad y el Documento de Protección de Datos Personales.
+* **Visualización Dinámica (PrivacyModal):** Se creó un componente modal reutilizable que permite a los usuarios leer los documentos legales íntegros con un solo clic, sin abandonar el flujo de registro.
+* **Documentación Legal:** Se generaron y almacenaron en la carpeta `documentacion_privacidad` los textos legales necesarios que exponen los fines del tratamiento de los datos, el proceso para ejercer Derechos ARCO, los mecanismos de seguridad y la garantía de no transferencia a terceros.
 
 ---
 
