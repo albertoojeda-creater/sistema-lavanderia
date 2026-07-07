@@ -8,7 +8,7 @@ import Login from './pages/Login';
 import Customers from './pages/Customers';
 import Settings from './pages/Settings';
 import Reports from './pages/Reports';
-
+import Register from './pages/Register';
 const PrivateRoute = ({ children }) => {
     const username = localStorage.getItem('username');
     return username ? children : <Navigate to="/login" />;
@@ -20,6 +20,7 @@ function App() {
             <Routes>
                 {/* Public Pages */}
                 <Route path="/tracking" element={<CustomerSearch />} />
+                <Route path="/registro" element={<Register />} />
                 <Route path="/order/:ticketNumber" element={<CustomerDashboard />} />
 
                 {/* Admin Login */}
